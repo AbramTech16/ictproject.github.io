@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Health Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Student Health Tracker</h1>
+    </header>
+    <main>
+        <section id="form-section">
+            <h3>Register Illness</h3>
+            <form id="registration-form">
+                <label for="student-name">Student Name</label>
+                <input type="text" id="student-name" placeholder="Enter your name" required>
+
+                <label for="symptoms">Symptoms</label>
+                <textarea id="symptoms" placeholder="Describe your symptoms" required></textarea>
+
+                <label for="date-time">Date/Time of Onset</label>
+                <input type="datetime-local" id="date-time" required>
+
+                <label for="blood-pressure">Blood Pressure</label>
+                <input type="text" id="blood-pressure" placeholder="e.g., 120/80" required>
+
+                <label for="temperature">Temperature</label>
+                <input type="text" id="temperature" placeholder="e.g., 98.6" required>
+
+                <label for="medication-intake">Medication Intake</label>
+                <input type="text" id="medication-intake" placeholder="Medication taken" required>
+
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+
+        <section id="table-section">
+            <h3>Submitted Data</h3>
+            <table id="students-table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Symptoms</th>
+                        <th>Date/Time</th>
+                        <th>Blood Pressure</th>
+                        <th>Temperature</th>
+                        <th>Medication Intake</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </section>
+
+        <section id="personal-health-section">
+            <h3>Personal Health Tracker</h3>
+            <input type="text" id="search-name" placeholder="Enter student name to search">
+            <div class="personal-health-container">
+                <div class="personal-health-info">
+                    <p><strong>Blood Pressure:</strong> <span id="personal-blood-pressure">N/A</span></p>
+                    <p><strong>Temperature:</strong> <span id="personal-temperature">N/A</span></p>
+                    <p><strong>Medication Intake:</strong> <span id="personal-medication-intake">N/A</span></p>
+                </div>
+                <div class="personal-health-chart">
+                    <canvas id="personal-health-graph"></canvas>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="scripts.js"></script>
+</body>
+</html>
